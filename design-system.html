@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Design System Showcase – Mega Ads</title>
+    <!-- Importando os mesmos estilos do site original -->
+    <link data-rocket-preload="" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CManrope%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CSora%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=swap" rel="preload">
+    <link href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CManrope%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CSora%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/frontend.min.css">
+    <link rel="stylesheet" href="css/post-2018.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/v4-shims.min.css">
+    <link rel="stylesheet" href="css/fadeIn.min.css">
+    <link rel="stylesheet" href="css/slideInUp.min.css">
+    <link rel="stylesheet" href="css/widget-image.min.css">
+    <link rel="stylesheet" href="css/widget-heading.min.css">
+    <link rel="stylesheet" href="css/widget-icon-box.min.css">
+    <link rel="stylesheet" href="css/post-2312.css">
+
+    <style>
+        /* Estilos específicos para a navegação do Design System */
+        :root {
+            --ds-bg: #04041c;
+            --ds-accent: #D3AF37;
+            --ds-text: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--ds-bg);
+            color: var(--ds-text);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding-top: 60px; /* Espaço para o menu fixo */
+        }
+
+        .ds-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(4, 4, 28, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(211, 175, 55, 0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .ds-nav a {
+            color: var(--ds-text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .ds-nav a:hover {
+            color: var(--ds-accent);
+        }
+
+        .ds-section {
+            padding: 100px 5% 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ds-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--ds-accent);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 4px solid var(--ds-accent);
+            padding-left: 20px;
+        }
+
+        .ds-spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .ds-spec-table th, .ds-spec-table td {
+            text-align: left;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ds-spec-table th {
+            color: var(--ds-accent);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .ds-spec-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: right;
+        }
+
+        .ds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .ds-color-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ds-color-swatch {
+            height: 120px;
+            width: 100%;
+        }
+
+        .ds-color-info {
+            padding: 15px;
+        }
+
+        .ds-color-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .ds-color-hex {
+            font-size: 12px;
+            font-family: monospace;
+            opacity: 0.7;
+        }
+
+        .ds-component-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .ds-motion-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .ds-motion-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .ds-animate-trigger {
+            background: var(--ds-accent);
+            color: var(--ds-bg);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Ajustes de override do Elementor para a documentação */
+        .elementor-2312 .elementor-element {
+            --flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+            .ds-nav {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body class="wp-singular page-template page-template-elementor_canvas page page-id-2312 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-2018 elementor-page elementor-page-2312">
+
+    <!-- Navegação do Design System -->
+    <nav class="ds-nav">
+        <a href="#hero">Hero</a>
+        <a href="#typography">Tipografia</a>
+        <a href="#colors">Cores</a>
+        <a href="#components">Componentes</a>
+        <a href="#layout">Layout</a>
+        <a href="#motion">Animações</a>
+        <a href="#icons">Ícones</a>
+    </nav>
+
+    <div class="elementor elementor-2312">
+
+        <!-- SEÇÃO 0: HERO (CLONE EXATO) -->
+        <section id="hero">
+            <div class="elementor-element elementor-element-29d9f0bf e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="29d9f0bf" data-element_type="container" data-e-type="container" data-settings='{"background_background":"classic"}'>
+                <div class="e-con-inner">
+                    <div class="elementor-element elementor-element-5e793075 e-con-full e-flex e-con e-child" data-id="5e793075" data-element_type="container" data-e-type="container" data-settings='{"background_background":"classic"}'>
+                        <div class="elementor-element elementor-element-12c4482b elementor-widget-mobile__width-initial elementor-invisible elementor-widget elementor-widget-image" data-id="12c4482b" data-element_type="widget" data-e-type="widget" data-settings='{"_animation":"fadein"}' data-widget_type="image.default">
+                            <img fetchpriority="high" decoding="async" width="800" height="222" src="images/sua-logo-aqui.webp" class="attachment-large size-large wp-image-2297" alt="">
+                        </div>
+                        <div class="elementor-element elementor-element-6bbe126c elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-heading" data-id="6bbe126c" data-element_type="widget" data-e-type="widget" data-settings='{"_animation":"fadein"}' data-widget_type="heading.default">
+                            <h2 class="elementor-heading-title elementor-size-default">Design System & <p style="color: white">Pattern Library <span style="letter-spacing: 0px">v1.0</span></p></h2>
+                        </div>
+                        <div class="elementor-element elementor-element-30868e8d elementor-widget-mobile__width-initial elementor-invisible elementor-widget elementor-widget-heading" data-id="30868e8d" data-element_type="widget" data-e-type="widget" data-settings='{"_animation":"fadein"}' data-widget_type="heading.default">
+                            <h2 class="elementor-heading-title elementor-size-default">Este é o guia canônico de estilos, componentes e comportamentos do projeto Mega Ads. Preservando a identidade visual premium e a experiência do usuário.</h2>
+                        </div>
+                        <div class="elementor-element elementor-element-58d7f1d1 bt elementor-widget-mobile__width-initial elementor-widget elementor-widget-button" data-id="58d7f1d1" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
+                            <a class="elementor-button elementor-button-link elementor-size-sm" href="#typography">
+                                <span class="elementor-button-content-wrapper">
+                                    <span class="elementor-button-text">Explorar Biblioteca</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="elementor-element elementor-element-5b41365b e-con-full elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child" data-id="5b41365b" data-element_type="container" data-e-type="container">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 1: TYPOGRAPHY -->
+        <section id="typography" class="ds-section">
+            <h2 class="ds-section-title">Typography</h2>
+            <table class="ds-spec-table">
+                <thead>
+                    <tr>
+                        <th>Style Name</th>
+                        <th>Preview</th>
+                        <th>Specs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heading 1 (Hero)</td>
+                        <td>
+                            <div class="elementor-element elementor-element-6bbe126c elementor-widget-heading">
+                                <h1 class="elementor-heading-title">Exemplo de Título H1</h1>
+                            </div>
+                        </td>
+                        <td class="ds-spec-label">Montserrat / 37px / 600</td>
+                    </tr>
+                    <tr>
+                        <td>Heading 2 (Section)</td>
+                        <td>
+                            <div class="elementor-element elementor-element-5b967a5f elementor-widget-heading">
+                                <h2 class="elementor-heading-title">Como podemos <span style="color: white">te ajudar</span></h2>
+                            </div>
+                        </td>
+                        <td class="ds-spec-label">Montserrat / 30px / 600 / 59px LH</td>
+                    </tr>
+                    <tr>
+                        <td>Heading 3 (Card)</td>
+                        <td>
+                            <div class="elementor-element elementor-element-1f67ef0 elementor-widget-icon-box">
+                                <h3 class="elementor-icon-box-title">SUB-NICHO EXEMPLO</h3>
+                            </div>
+                        </td>
+                        <td class="ds-spec-label">Montserrat / 25px / 600</td>
+                    </tr>
+                    <tr>
+                        <td>Bold M</td>
+                        <td>
+                            <div class="elementor-element elementor-element-7e587efa elementor-widget-text-editor">
+                                <p><strong>Fale com nossa equipe e agende já seu horário</strong></p>
+                            </div>
+                        </td>
+                        <td class="ds-spec-label">Montserrat / 16px / 400</td>
+                    </tr>
+                    <tr>
+                        <td>Paragraph</td>
+                        <td>
+                            <div class="elementor-element elementor-element-34720e5d elementor-widget-heading">
+                                <h2 class="elementor-heading-title">Veja abaixo quais tipos de causas podemos te ajudar</h2>
+                            </div>
+                        </td>
+                        <td class="ds-spec-label">Poppins / 20px / 400</td>
+                    </tr>
+                    <tr>
+                        <td>Regular S / Description</td>
+                        <td>
+                            <div class="elementor-element elementor-element-1f67ef0 elementor-widget-icon-box">
+                                <p class="elementor-icon-box-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt.</p>
+                            </div>
+                        </td>
+                        <td class="ds-spec-label">Poppins / 16px / 400 / 1.5em LH</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SEÇÃO 2: COLORS & SURFACES -->
+        <section id="colors" class="ds-section">
+            <h2 class="ds-section-title">Colors & Surfaces</h2>
+            <div class="ds-grid">
+                <!-- Primary Colors -->
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background: #04041c;"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Deep Navy (Background)</div>
+                        <div class="ds-color-hex">#04041C</div>
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background: #D3AF37;"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Gold (Accent)</div>
+                        <div class="ds-color-hex">#D3AF37</div>
+                    </div>
+                </div>
+                <!-- Gradients -->
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background: linear-gradient(90deg, #D4AF37, #B8962E, #F2D16B);"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Metallic Gold Gradient</div>
+                        <div class="ds-color-hex">Button Primary</div>
+                    </div>
+                </div>
+                <div class="ds-color-card">
+                    <div class="ds-color-swatch" style="background: linear-gradient(108deg, #2C80CF47 0%, #00022780 100%);"></div>
+                    <div class="ds-color-info">
+                        <div class="ds-color-name">Glass Blue Gradient</div>
+                        <div class="ds-color-hex">Card Surface</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: #fff;">Glassmorphism & Surfaces</h3>
+            <div class="ds-component-box">
+                <div class="elementor-element elementor-element-1f67ef0" style="width: 300px; max-width: 100%; display: block;">
+                    <div style="padding: 20px;">Superfície de Card com Blur</div>
+                </div>
+                <div class="elementor-element elementor-element-1125b293" style="width: 300px; max-width: 100%; display: block;">
+                    <div style="padding: 20px;">Superfície de Contato (Bordered)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: UI COMPONENTS -->
+        <section id="components" class="ds-section">
+            <h2 class="ds-section-title">UI Components</h2>
+            
+            <h3 style="color: #fff;">Buttons</h3>
+            <div class="ds-component-box">
+                <div class="elementor-element elementor-element-58d7f1d1 elementor-widget-button">
+                    <a class="elementor-button elementor-size-sm" href="#">
+                        <span class="elementor-button-text">Default State</span>
+                    </a>
+                </div>
+                <div class="elementor-element elementor-element-58d7f1d1 elementor-widget-button">
+                    <a class="elementor-button elementor-size-sm" href="#" style="box-shadow: 0px 0px 40px 0px rgba(212, 175, 55, 0.7) !important;">
+                        <span class="elementor-button-text">Hover Mode</span>
+                    </a>
+                </div>
+            </div>
+
+            <h3 style="color: #fff; margin-top: 40px;">Cards / Icon Boxes</h3>
+            <div class="ds-component-box">
+                <div class="elementor-element elementor-element-1f67ef0 elementor-widget-icon-box" style="width: 350px;">
+                    <div class="elementor-icon-box-wrapper">
+                        <div class="elementor-icon-box-icon">
+                            <span class="elementor-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="81" height="81" viewBox="0 0 81 81" fill="none"><path d="M0 8C0 3.58172 3.58172 0 8 0H73C77.4183 0 81 3.58172 81 8V73C81 77.4183 77.4183 81 73 81H8C3.58172 81 0 77.4183 0 73V8Z" fill="#B97F39" fill-opacity="0.1"></path><rect x="17" y="17" width="48" height="48" fill="#B97F39" fill-opacity="0.5"></rect></svg>
+                            </span>
+                        </div>
+                        <div class="elementor-icon-box-content">
+                            <h3 class="elementor-icon-box-title">Card Component</h3>
+                            <p class="elementor-icon-box-description">Demonstração da estrutura de card com gradiente e blur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: LAYOUT & SPACING -->
+        <section id="layout" class="ds-section">
+            <h2 class="ds-section-title">Layout & Spacing</h2>
+            <p>Padrões de grid e espaçamento utilizados no projeto.</p>
+            
+            <div style="margin-top: 30px;">
+                <h4 style="color: var(--ds-accent);">Grid de 3 Colunas (Serviços)</h4>
+                <div class="elementor-element elementor-element-207415d e-con-full e-flex" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+                    <div style="flex: 1; height: 100px; background: rgba(211, 175, 55, 0.2); border: 1px solid var(--ds-accent);">Col 1</div>
+                    <div style="flex: 1; height: 100px; background: rgba(211, 175, 55, 0.2); border: 1px solid var(--ds-accent);">Col 2</div>
+                    <div style="flex: 1; height: 100px; background: rgba(211, 175, 55, 0.2); border: 1px solid var(--ds-accent);">Col 3</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h4 style="color: var(--ds-accent);">Grid 50/50 (Sobre / Atuação)</h4>
+                <div class="elementor-element e-flex" style="flex-direction: row; gap: 20px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+                    <div style="width: 50%; height: 150px; background: rgba(211, 175, 55, 0.2); border: 1px solid var(--ds-accent);">Lado Esquerdo</div>
+                    <div style="width: 50%; height: 150px; background: rgba(211, 175, 55, 0.2); border: 1px solid var(--ds-accent);">Lado Direito</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 5: MOTION & INTERACTION -->
+        <section id="motion" class="ds-section">
+            <h2 class="ds-section-title">Motion & Interaction</h2>
+            <div class="ds-motion-gallery">
+                <!-- Fade In -->
+                <div class="ds-motion-card">
+                    <div id="demo-fadein" class="elementor-invisible" data-settings='{"_animation":"fadein"}'>
+                        <h4 style="color: #fff;">Fade In</h4>
+                    </div>
+                    <button class="ds-animate-trigger" onclick="triggerAnim('demo-fadein', 'elementor-animated fadein')">Testar Animação</button>
+                </div>
+                <!-- Slide In Up -->
+                <div class="ds-motion-card">
+                    <div id="demo-slideup" class="elementor-invisible" data-settings='{"_animation":"slideinup"}'>
+                        <h4 style="color: #fff;">Slide In Up</h4>
+                    </div>
+                    <button class="ds-animate-trigger" onclick="triggerAnim('demo-slideup', 'elementor-animated slideinup')">Testar Animação</button>
+                </div>
+                <!-- Hover Lift -->
+                <div class="ds-motion-card">
+                    <div class="elementor-element-1f67ef0" style="padding: 20px; cursor: pointer; transition: all 0.3s ease;">
+                        <h4 style="color: #fff;">Hover Lift</h4>
+                        <p style="font-size: 12px;">Passe o mouse para ver o efeito</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 6: ICONS -->
+        <section id="icons" class="ds-section">
+            <h2 class="ds-section-title">Icons</h2>
+            <div class="ds-grid">
+                <div style="text-align: center;">
+                    <svg aria-hidden="true" class="e-font-icon-svg e-fab-whatsapp" style="width: 40px; fill: var(--ds-accent);" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                    <p style="font-size: 10px; margin-top: 10px;">WhatsApp</p>
+                </div>
+                <div style="text-align: center;">
+                    <svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" style="width: 40px; fill: var(--ds-accent);" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                    <p style="font-size: 10px; margin-top: 10px;">Instagram</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts do site para garantir animações e comportamento -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/v4-shims.min.js"></script>
+    <script>
+        // Função para disparar animações manualmente na galeria
+        function triggerAnim(id, classes) {
+            const el = document.getElementById(id);
+            el.className = '';
+            void el.offsetWidth; // Trigger reflow
+            el.className = classes;
+        }
+
+        // Script de Compatibilidade Local (Mega Ads Local Fix)
+        (function() {
+            const triggerAnimations = () => {
+                const elements = document.querySelectorAll('.elementor-invisible');
+                elements.forEach(el => {
+                    const settings = el.getAttribute('data-settings');
+                    let animClass = 'fadeIn'; 
+                    if (settings) {
+                        try {
+                            const parsed = JSON.parse(settings);
+                            animClass = parsed._animation || animClass;
+                        } catch(e) {}
+                    }
+                    el.classList.remove('elementor-invisible');
+                    el.classList.add('elementor-animated', animClass);
+                });
+            };
+
+            // Tenta rodar após 1 segundo
+            setTimeout(triggerAnimations, 1000);
+
+            // Força ao rolar a página
+            window.addEventListener('scroll', () => {
+                if (document.querySelectorAll('.elementor-invisible').length > 0) {
+                    triggerAnimations();
+                }
+            }, { once: true });
+
+            // Inicialização imediata para elementos visíveis
+            $(document).ready(triggerAnimations);
+        })();
+    </script>
+
+</body>
+</html>
